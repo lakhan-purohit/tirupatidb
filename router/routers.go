@@ -51,6 +51,7 @@ func CreateServer(dbFunc dbModel.RouterFunc, htp HttpServer) *Rtr {
 	router.PUT("/api/v2/updateOrder/{id}/{price}/{qty}", r.upateOrder)
 	router.PUT("/api/v2/updateStatus/{id}/{status}", r.upateOrderStatus)
 	router.DELETE("/api/v2/deleteOrder/{id}", r.deleteOrder)
+	router.DELETE("/api/v2/deleteOrder1/{id}", r.deleteOrder)
 
 	return r
 }
