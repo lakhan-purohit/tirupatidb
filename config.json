@@ -1,0 +1,22 @@
+{
+    "HTTPSERVER":{
+        "Listen":":8080",
+        "ReadTimeOut":5000000000,
+        "WriteTimeOut":5000000000,
+        "MaxConnPerIp":50,
+        "MaxRequestPerConn":20,
+        "MaxKeepAliveDuration":500000000
+    },
+    "DB":{
+        "Engine":"mysql",
+        "EngineConfig":{
+            "Host":"127.0.0.1",
+            "User":"root",
+            "Password":"",
+            "Db":"tirupatidb",
+            "MaxIdelConn":3,
+            "MaxOpenConn":10
+        }
+    }
+    
+}
