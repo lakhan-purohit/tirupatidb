@@ -2,6 +2,7 @@ package router
 
 import (
 	"log"
+	"os"
 	"tirupatiBE/dal/dbModel"
 
 	"github.com/fasthttp/router"
@@ -56,7 +57,7 @@ func CreateServer(dbFunc dbModel.RouterFunc, htp HttpServer) *Rtr {
 
 func (r *Rtr) Begin() {
 
-	if err := fasthttp.ListenAndServe(r.httpServer.Listen, r.srv.Handler); err != nil {
+	if err := fasthttp.ListenAndServe(r.httpServer.Listen+os.Getenv("PORT"), r.srv.Handler); err != nil {
 
 		panic(err)
 	} else {

@@ -17,7 +17,7 @@ func SqlConnection(cnf *config.Config) (dbModel.RouterFunc, error) {
 
 	var dba dbAccess
 
-	dsn := cnf.Db.EngineConfigStruct.User + ":" + cnf.Db.EngineConfigStruct.Password + "@tcp(" + cnf.Db.EngineConfigStruct.Host + ":3306)/" + cnf.Db.EngineConfigStruct.DB + "?parseTime=true"
+	dsn := cnf.Db.EngineConfigStruct.User + ":" + cnf.Db.EngineConfigStruct.Password + "@tcp(" + cnf.Db.EngineConfigStruct.Host + ":)/" + cnf.Db.EngineConfigStruct.DB + "?parseTime=true"
 
 	db := sqlx.MustConnect("mysql", dsn)
 

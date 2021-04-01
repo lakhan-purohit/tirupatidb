@@ -1,6 +1,6 @@
 {
     "HTTPSERVER":{
-        "Listen":":8080",
+        "Listen":":",
         "ReadTimeOut":5000000000,
         "WriteTimeOut":5000000000,
         "MaxConnPerIp":50,
@@ -10,8 +10,7 @@
     "DB":{
         "Engine":"mysql",
         "EngineConfig":{
-"Host":"tirupatidb.herokuapp.com",
-           
+            "Host":"tirupatidb.herokuapp.com",
             "User":"root",
             "Password":"",
             "Db":"tirupatidb",
