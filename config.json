@@ -10,7 +10,8 @@
     "DB":{
         "Engine":"mysql",
         "EngineConfig":{
-            "Host":"127.0.0.1",
+"Host":"tirupatidb.herokuapp.com",
+           // "Host":"127.0.0.1",
             "User":"root",
             "Password":"",
             "Db":"tirupatidb",
