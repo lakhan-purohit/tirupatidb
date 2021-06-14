@@ -1,0 +1,6 @@
+
+{
+    "scripts": {
+        "start": "go run main.go"
+    }
+}
