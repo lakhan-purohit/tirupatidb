@@ -15,7 +15,7 @@ func (r *Rtr) createUser(ctx *fasthttp.RequestCtx) {
 	if e != nil {
 		fmt.Println("err", e)
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong unmarshal\"}")
-		return
+
 	}
 
 	fmt.Println(userInfo.UserMobileNumber)
@@ -24,18 +24,16 @@ func (r *Rtr) createUser(ctx *fasthttp.RequestCtx) {
 	if err != nil {
 		fmt.Println(err)
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong fetch data\"}")
-		return
+
 	}
 
 	val, errVal := json.Marshal(res)
 	if errVal != nil {
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong unmarshal\"}")
-		return
 
 	}
 
 	ctx.WriteString(string(val))
-	return
 
 }
 
@@ -46,7 +44,7 @@ func (r *Rtr) loginUser(ctx *fasthttp.RequestCtx) {
 	if e != nil {
 		fmt.Println("err", e)
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong unmarshal\"}")
-		return
+
 	}
 
 	fmt.Println(userInfo.UserMobileNumber)
@@ -55,18 +53,16 @@ func (r *Rtr) loginUser(ctx *fasthttp.RequestCtx) {
 	if err != nil {
 		fmt.Println(err)
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong fetch data\"}")
-		return
+
 	}
 
 	val, errVal := json.Marshal(res)
 	if errVal != nil {
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong unmarshal\"}")
-		return
 
 	}
 
 	ctx.WriteString(string(val))
-	return
 
 }
 
@@ -75,18 +71,16 @@ func (r *Rtr) userList(ctx *fasthttp.RequestCtx) {
 	if err != nil {
 		fmt.Println(err)
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong fetch data\"}")
-		return
+
 	}
 
 	val, errVal := json.Marshal(res)
 	if errVal != nil {
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong unmarshal\"}")
-		return
 
 	}
 
 	ctx.WriteString(string(val))
-	return
 
 }
 
@@ -98,24 +92,22 @@ func (r *Rtr) userDetailsUpdate(ctx *fasthttp.RequestCtx) {
 	if err != nil {
 		fmt.Println(err)
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong fetch data\"}")
-		return
+
 	}
 
 	res, err := r.db.UserDetailsUpdate(userDetails)
 	if err != nil {
 		fmt.Println(err)
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong \"}")
-		return
+
 	}
 
 	val, errVal := json.Marshal(res)
 	if errVal != nil {
 		ctx.WriteString("{\"s\":0,\"m\":\"something went wrong unmarshal\"}")
-		return
 
 	}
 
 	ctx.WriteString(string(val))
-	return
 
 }
